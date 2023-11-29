@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    body{
+        margin: 0;
+        text-decoration: none;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        box-sizing: border-box;
+
+    }
+    .navbar {
+    /* padding: 2rem 4%; */
+    /* border: 22px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    position:absolute;
+    box-shadow: 0 .5rem 1.5rem rgba(220, 20, 60, .1);
+    background-color: #ffffff;
+}
+.navbar .logo {
+    font-size: 5rem;
+    font-weight: 600;
+    color: crimson;
+    position: relative;
+    text-decoration: none;
+}
+
+/* .navbar .list ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar .list ul li{
+    list-style: none;
+
+} */
+.navbar .list a {
+    margin: 0 1rem;
+    font-size: 1.7rem;
+    color: crimson;
+    /* font-weight: 500; */
+    position: relative;
+}
+
+.navbar .list a:before {
+    content: "";;
+    position: absolute;
+    bottom: -5px;
+    /* width: 60%; */
+    height: 2px;    
+    width: 0;
+    border-radius: 50px;
+    background: crimson;
+    transition:0.5s ;
+}
+.navbar .list a:hover:before{
+    width: 80%;
+    /* font-size: 1.8rem; */
+    /* transition: 0.7s; */
+}
+.navbar .icon div{
+    /* border: 1px solid red; */
+    height: 3.5rem;
+    width: 3.5rem;
+    line-height: 3.5rem;
+    background-color: #eeeeee;
+    font-size: 1.8rem;
+    color: black; 
+    border-radius: 5px;
+    /* margin-right: 0.1rem; */
+    text-align: center;
+}
+.navbar .icon div:hover{
+    background-color: crimson;
+    color: white;
+}
+#bar-style{
+    display: none;
+}
+.navbar .list.active{
+    right: 2rem;
+    transition: 0.4s linear;
+}
+#btn{
+    position: relative;
+    display: inline-flex;
+    padding: 1.1rem 2.3rem;
+    background-color: transparent;
+    color: black;
+    text-decoration: none;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    font-size: 1.7rem;
+    margin-left: 1rem;
+    overflow: hidden;
+    font-weight: 600;
+    background-color: #eeeeee;
+}
+#btn span{
+    position: relative;
+    z-index: 1;
+}
+#btn::before{
+    content: '';
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: crimson;
+    transition: width 0.5s, height 0.5s;
+}
+#btn:hover::before{
+    width: 100px;
+    height:100px;
+     color: white; 
+}
+
+.row{
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+}
+.about-us{
+    width: 80%;
+    margin: auto;
+    padding-top: 160px;
+    padding-bottom: 50px;
+}
+.about-col{
+    padding: 30px 2px;
+    flex-basis: 48%;
+}
+.about-col img{
+    width: 100%;
+}
+.about-col h1{
+    margin: 10px 0;
+    padding: 4px 4px;
+    font-size: 35px;
+}
+.about-col p{
+    line-height: 30px;
+}
+.about-col span{
+    color: crimson;
+}
+
+</style>
+<body>
+    <header class="navbar">
+        <a href="#" class="logo"><i class="fa-solid fa-brain"></i>RESULT</a>
+    </header>
+    
+    <section class="about-us">
+        <div class="row">
+            <div class="about-col">
+                <h1>You are suffring from <span>Anxiety......</span></h1>
+                <p>You have come Under a treatment with a proper guidence of the doctor.</p>
+
+            </div>
+        </div>
+        
+    </section>
+</body>
+</html>

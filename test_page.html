@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST_PAGE</title>
+    <!-- <link rel="stylesheet" href="test_page.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    * {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: content-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+section{
+    padding: 2rem 7%;
+}
+
+body {
+    background-color: #eee;
+    height: 100vh;
+    /* place-items: ce; */
+    /* display: grid; */
+
+}
+.navbar {
+    padding: 2rem 7%;
+    /* border: 22px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    box-shadow: 0 .5rem 1.5rem rgba(220, 20, 60, .1);
+    background-color: #ffffff;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: crimson;
+    position: relative;
+}
+
+/* .navbar .list ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar .list ul li{
+    list-style: none;
+
+} */
+.navbar .list a {
+    margin: 0 1rem;
+    font-size: 1.7rem;
+    color: crimson;
+    /* font-weight: 500; */
+    position: relative;
+}
+
+.navbar .list a:before {
+    content: "";;
+    position: absolute;
+    bottom: -5px;
+    /* width: 60%; */
+    height: 2px;    
+    width: 0;
+    border-radius: 50px;
+    background: crimson;
+    transition:0.5s ;
+}
+.navbar .list a:hover:before{
+    width: 80%;
+    /* font-size: 1.8rem; */
+    /* transition: 0.7s; */
+}
+.navbar .icon div{
+    /* border: 1px solid red; */
+    height: 3.5rem;
+    width: 3.5rem;
+    line-height: 3.5rem;
+    background-color: #eeeeee;
+    font-size: 1.8rem;
+    color: black; 
+    border-radius: 5px;
+    /* margin-right: 0.1rem; */
+    text-align: center;
+}
+.navbar .icon div:hover{
+    background-color: crimson;
+    color: white;
+}
+#bar-style{
+    display: none;
+}
+.navbar .list.active{
+    right: 2rem;
+    transition: 0.4s linear;
+}
+#btn{
+    position: relative;
+    display: inline-flex;
+    padding: 1.1rem 2.3rem;
+    background-color: transparent;
+    color: black;
+    text-decoration: none;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    font-size: 1.7rem;
+    margin-left: 1rem;
+    overflow: hidden;
+    font-weight: 600;
+    background-color: #eeeeee;
+}
+#btn span{
+    position: relative;
+    z-index: 1;
+}
+#btn::before{
+    content: '';
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: crimson;
+    transition: width 0.5s, height 0.5s;
+}
+#btn:hover::before{
+    width: 100px;
+    height:100px;
+    /* color: white; */
+}
+.navbar .search_box{
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    color: crimson;
+    /* border: 1px solid crimson; */
+    height: 4rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    width: 25vw;
+}
+.navbar .search_box.active{
+    right: 2rem;
+    transition: 0.4s linear;
+}
+.navbar .search_box input{
+    height: 100%;
+    width: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    padding: 0 2rem;
+    color: crimson;
+    /* border: 1px solid; */
+}
+.navbar .search_box label{
+    font-size: 1.7rem;
+    cursor: pointer;
+    padding-right: 1.5rem;
+}
+.test_page_heading{
+    padding: 1rem 7%;
+    margin: 7.5rem 0 0 0;
+    background-color: #f38a8a;
+    display: flex;
+    /* position: fixed;   */
+}
+.test_page_heading h1{
+    font-size: 6rem;
+    font-weight: 700;
+    color: crimson;
+ }
+ .text_cont{
+    padding: 2rem 10%;
+    text-decoration: none;
+    max-width: 60%;
+    margin: 2rem 0;  
+ }
+.text_cont ul{
+    list-style: none;
+}
+.text_cont ul li {
+    font-size: 2.1rem;
+    line-height: 3rem;
+    
+}
+.text_cont ul li p{
+    margin: 2rem 0;
+}
+.text_cont ul li .label_que{
+    /* border: 1px solid red; */
+    color: #222;
+    line-height: 1rem;
+    /* margin: 2rem; */
+    
+}
+.text_cont ul li .optins_st ul{
+    display: flex;
+}
+.text_cont ul li .optins_st ul li{
+    margin: 3rem 2rem;
+}
+.radio{
+    display: none;
+}
+.label_yn{
+    padding: 1.2rem 3.3rem;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    font-size: 1.7rem;
+    font-weight: 600;
+    position: relative;
+    display: inline-flex;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    
+}
+.label_yn span{
+    z-index: 1;
+    position: relative;
+}
+.label_yn::before{
+    content: '';
+    position: absolute;
+    top: var(--x1);
+    left: var(--y1);
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: crimson;
+    transition: width 0.5s, height 0.5s;
+}
+.label_yn:hover::before{
+    width: 100px;
+    height:100px;
+}
+
+
+#choise_1:checked ~ .label_1,
+#choise_2:checked ~ .label_2
+{
+    background-color: transparent;
+}
+
+#choise_2:checked ~ .label_2_1,
+#choise_2:checked ~ .label_2_2
+{
+    background-color: transparent;
+}
+.select_bar{
+    border: none;
+    display: inline-flex;
+    padding: 1.5rem 4rem;
+    font-size: 1.8rem;   
+    font-weight: 600;
+    position: relative;
+    outline: none;
+    overflow: none;
+    letter-spacing: 1px;
+}
+/* .select_optiion{
+    padding-right: 2rem;
+} */
+.text_cont .big_btn{
+    position: relative;
+    display: inline-flex;
+    padding: 2rem 7rem;
+    background-color: #ffffff;
+    color: black;
+    text-decoration: none;letter-spacing: 1px;
+    overflow: hidden;
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+.text_cont .big_btn span{
+    color: black;
+    z-index: 1;
+}
+.text_cont .big_btn::before{
+    content: '';
+    position: absolute;
+    top: var(--y1);
+    left: var(--x1);
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: crimson;
+    transition: width 0.5s, height 0.5s;
+}
+.text_cont .big_btn:hover::before{
+    width: 350px;
+    height: 350px;  
+
+}
+
+@media (max-width: 1080px)
+{
+    html{
+        font-size: 55%;
+    }
+    .navbar{
+        padding: 2rem;
+    }
+    .text_cont{
+        max-width: 80%;
+    }
+}
+@media (max-width: 970px){
+    html{
+        font-size: 45%;
+    }
+    .navbar .search_box{
+        width: 40vw;
+    }
+    selection{
+        padding: 2rem 7%;
+    }
+    .text_cont{
+        max-width: 100%;
+    }
+    
+}
+@media(max-width: 700px){
+    /* html{
+        font-size: 40%;
+    } */
+    .navbar .list{
+        position: absolute;
+        top: 110%;
+        right: -110%;
+        width: 25rem;
+        border-radius: 0.5rem;
+        background-color: #ffffff;
+    } 
+    #bar-style{
+        display: inline-block;
+    }
+    .navbar .list a{
+        font-size: 2rem;
+        margin: 2rem 2.5rem;
+        display: block;
+    }
+    .navbar .search_box{
+        width: 50vw;
+    }
+
+}
+
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb
+{
+    border-radius: 6px;
+    background: linear-gradient(transparent,#DC143C); 
+}
+</style>
+
+<body>
+    <header class="navbar">
+        <!-- <a href="#"></a> -->
+        <a href="#" class="logo"><i class="fa-solid fa-brain"></i> Mental Solutions</a>
+        <nav class="list">
+            <a href="#HOME">HOME</a>
+            <a href="#features">ABOUT-US</a>
+            <a href="#products">FEATURES</a>
+            <a href="#categories">Talk to a psychiatrist</a>
+            <a href="#review">REVIEWS</a>
+            <a href="#blos">BLOGS</a> 
+        </nav>
+        <div class="icon">
+            <div class="fa-solid fa-bars" id="bar-style"></div>
+            <div class="fa-solid fa-magnifying-glass" id="search_bar"></div>
+            <a href="#" id="btn"><span>log-in</span></a>
+        </div>
+        <form action="" class="search_box">
+            <input type="search" id="search_here" placeholder="Search Here....">
+            <label for="search_here" class="fa-solid fa-search"></label>
+        </form>
+
+    </header>
+    <header class="test_page_heading">
+        <h1>Depression Test</h1>
+    </header>
+    <form action="">
+        <div class="text_cont">
+            <ul>
+                <li>
+                    <p>
+                        <strong>Over the last 2 weeks</strong>, how often have you been bothered by any of the following
+                        problems?
+                    </p>
+                    <p>Please note, all fields are required.</p>
+                </li>
+                <li>
+                    <label class="label_que">
+                        1. I am currently employed at least part-time
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        2. previous Mental Health Issue ?
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        3. I have my own computer separate from a smart phone
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        4. I have been hospitalized before for my mental illness
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        5. How many days were you hospitalized for your mental illness
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">0 Week</option>
+                                    <option value="select">1 Week</option>
+                                    <option value="select">2 Week</option>
+                                    <option value="select">More than one Month</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        6. I am legally disabled
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        7. I have my regular access to the internet
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        8. I live with my parents
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        9. I have a gap in my resume
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        10. Total length of any gaps in my resume in months.
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">0-1 Month</option>
+                                    <option value="select">1-2 Month</option>
+                                    <option value="select">2-3 Month</option>
+                                    <option value="select">More than 3 Month</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        11. Income per Month  
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">Less then 10K</option>
+                                    <option value="select">10K-50K</option>
+                                    <option value="select">50k-100K</option>
+                                    <option value="select">More than 100K</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <label class="label_que">
+                        12. Unemployed
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <label class="label_que">
+                        13. I read outside of work and school
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <label class="label_que">
+                        14. Annual income from social welfare programs
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">Less then 10K</option>
+                                    <option value="select">10K-50K</option>
+                                    <option value="select">50k-100K</option>
+                                    <option value="select">More than 100K</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        15. I receive food stamps
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <label class="label_que">
+                        16. I am on section 8 housing
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <label class="label_que">
+                        17. How many times were you hospitalized for your mental illness
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">0 Times</option>
+                                    <option value="select">1-3 Times</option>
+                                    <option value="select">4-7 Times</option>
+                                    <option value="select">More then 7 Times</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <label class="label_que">
+                        18. Lack of concentration
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        19. Anxiety
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        20. Depression
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        21. Obsessive thinking
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        22. Mood swings
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        23. Panic attacks
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        24. Compulsive behavior
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        25. Tiredness
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">YES</option>
+                                    <option value="select">NO</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        26. Age
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">13-20</option>
+                                    <option value="select">20-40</option>
+                                    <option value="select">40-60</option></span>
+                                </select>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        27. Gender
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">Male</option>
+                                    <option value="select">Female</option>
+                                    <option value="select">Others</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        28. Household Income per Month
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">Less then 10K</option>
+                                    <option value="select">10K-50K</option>
+                                    <option value="select">50k-100K</option>
+                                    <option value="select">More than 100K</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="label_que">
+                        29. Device Type
+                    </label>
+                    <div class="optins_st">
+                        <ul>
+                            <li>
+                                <select name="" id="" class="select_bar"><span>
+                                    <option value="select" class="select_optiion">Select</option>
+                                    <option value="select">Andriod</option>
+                                    <option value="select">IOS</option>
+                                    <option value="select">Windows</option>
+                                    <option value="select">Others</option>
+                                    
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <a href="about_page.html" class="big_btn"><span>Test Your Mental Health</span></a>
+        </div>
+    </form>
+
+
+
+
+
+    <!-- #FF6969 -->
+    <script>
+        const btn = document.querySelector('#btn');
+        btn.onmousemove = function (e) {
+            const x = e.pageX - btn.offsetLeft;
+            const y = e.pageY - btn.offsetTop;
+
+            btn.style.setProperty('--x', x + 'px');
+            btn.style.setProperty('--y', y + 'px');
+
+        }
+    </script>
+    <!-- script for button style  for end -->
+    <script>
+        let searchForm = document.querySelector('.search_box');
+        document.querySelector('#search_bar').onclick = () => {
+            searchForm.classList.toggle('active');
+            // searchForm.classList.remove('active');
+            list.classList.remove('active');
+        }
+
+        let list = document.querySelector('.list');
+        document.querySelector('#bar-style').onclick = () => {
+            list.classList.toggle('active');
+            searchForm.classList.remove('active');
+            // list.classList.remove('active');
+        }
+
+
+        window.onscroll = () => {
+            searchForm.classList.remove('active');
+            list.classList.remove('active');
+
+        }
+    </script>
+    <script>
+        const btn1 = document.querySelector('#label_1');
+        btn1.onmousemove = function (e) {
+            const x1 = e.pageX - btn1.offsetLeft;
+            const y1 = e.pageY - btn1.offsetTop;
+
+            btn1.style.setProperty('--x1', x1 + 'px');
+            btn2.style.setProperty('--y1', y1 + 'px');
+        } 
+    </script>
+    <script>
+        const btn1 = document.querySelector('.big_btn');
+        btn1.onmousemove = function(e){
+            const x1 = e.pageX - btn1.offsetLeft;
+            const y1 = e.pageY - btn1.offsetTop;
+            
+            btn1.style.setProperty('--x1', x1 + 'px');
+            btn2.style.setProperty('--y1', y1 + 'px');
+        } 
+    </script>
+
+
+</body>
+
+</html>
